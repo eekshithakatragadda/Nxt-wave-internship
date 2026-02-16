@@ -1,0 +1,6 @@
+@import url("dailyTech.css");
+
+/* Overriding the background blur image for Mindful Moments */
+.show-header::before {
+    background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800');
+}

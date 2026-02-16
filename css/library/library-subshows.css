@@ -1,0 +1,115 @@
+/* ================= LIBRARY HEADER & PILLS ================= */
+.library-header h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.filter-logic {
+    display: none;
+}
+
+.filter-pill {
+    padding: 8px 24px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.filter-pill:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.filter-logic:checked + .filter-pill {
+    background: linear-gradient(90deg, #8b5cf6, #a855f7);
+    color: white;
+}
+
+/* ================= UPDATED CARD HOVER (BOTTOM ONLY DARKEN) ================= */
+
+.img-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.img-container img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Create the Bottom Gradient Overlay - only darkens bottom portion */
+.img-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Covers the bottom half */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Hover Logic */
+.image-card:hover .img-container img {
+    transform: scale(1.08);
+}
+
+.image-card:hover .img-container::after {
+    opacity: 1; /* Shows only the bottom shadow on hover */
+}
+
+.play-circle {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+    background-color: #a855f7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: 2; /* Sits above the shadow */
+}
+
+.image-card:hover .play-circle {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.card-info b {
+    display: block;
+    margin-top: 10px;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.image-card:hover .card-info b {
+    color: #a855f7;
+}
+
+.card-info small {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* ================= MOBILE SPACING FIXES ================= */
+@media (max-width: 991px) {
+    .main {
+        padding-bottom: 200px !important;
+    }
+}

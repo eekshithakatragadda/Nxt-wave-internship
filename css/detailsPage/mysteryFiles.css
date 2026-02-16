@@ -1,0 +1,4 @@
+/* Overriding only the background blur image */
+.show-header::before {
+    background-image: url('https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=800');
+}

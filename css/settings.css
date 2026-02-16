@@ -1,0 +1,94 @@
+/* ================= MAIN SETTINGS LAYOUT ================= */
+.settings-header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px; /* Pulls subtitle closer */
+}
+
+/* FIX: Smaller, muted subtitle to match image */
+.minhead {
+    color: #64748b !important;
+    font-size: 14px !important;
+    margin-bottom: 40px !important;
+    display: block;
+}
+
+.section-label {
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.settings-list {
+    display: flex;
+    flex-direction: column; gap: 12px;
+    max-width: 650px;
+}
+
+.settings-item {
+    background-color: #162032;
+    border-radius: 20px;
+    padding: 18px 22px;
+    display: flex; align-items: center; gap: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.bulge-card:hover {
+    background-color:#1d283a;
+    box-shadow: none;
+}
+
+.item-icon {
+    width: 44px; height: 44px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: #94a3b8; font-size: 18px;
+}
+
+.item-text b { display: block; color: white; font-size: 16px; margin-bottom: 2px; }
+.item-text small { color: #64748b; font-size: 13px; }
+
+/* ================= TOGGLE SWITCH ================= */
+.custom-switch {
+    width: 50px !important; height: 30px !important;
+    background-color: #2b394f !important;
+    border: none !important; cursor: pointer;
+    appearance: none; -webkit-appearance: none;
+    border-radius: 50px; outline: none !important; box-shadow: none !important;
+    transition: background-color 0.3s ease, background-position 0.3s ease;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat; background-position: left center; background-size: contain;
+}
+
+.custom-switch:checked {
+    background-color: #a855f7 !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e") !important;
+    background-position: right center; 
+}
+
+/* ================= SIGN OUT ================= */
+.sign-out-card {
+    background-color: rgba(239, 68, 68, 0.1);
+    max-width: 650px;
+    margin-top: 10px;
+}
+.sign-out-card:hover { background-color: rgba(239, 68, 68, 0.15); }
+.text-danger { color: #ef4444 !important; }
+
+.settings-footer {
+    opacity: 0.6;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 30px;
+    padding-bottom: 120px; 
+    text-align: center;
+    max-width: 650px; 
+    margin-left: 0; 
+    margin-right: auto;
+}

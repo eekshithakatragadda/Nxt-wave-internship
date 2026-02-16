@@ -1,0 +1,6 @@
+@import url("dailyTech.css");
+
+/* Overriding the background blur image for Science Unlocked */
+.show-header::before {
+    background-image: url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800');
+}

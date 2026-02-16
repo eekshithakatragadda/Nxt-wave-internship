@@ -1,0 +1,268 @@
+/* ================= GLOBAL VARIABLES ================= */
+:root {
+    --bg-dark: #0F1729;
+    --sidebar-dark: #1B2637;
+    --accent-purple: #a855f7;
+    --card-bg: rgba(30, 41, 59, 0.45);
+    --text-main: #ffffff;
+    --text-dim: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ================= MAIN CONTENT & SPACING ================= */
+.main {
+    padding: 40px 30px 120px 40px !important; 
+    width: 100%;
+    min-height: 100vh;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%; 
+}
+
+.explore-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.section h4 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 24px;
+}
+
+/* ================= SEARCH BAR STYLING ================= */
+.search-container {
+    position: relative;
+    max-width: 500px;
+}
+
+.search-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-dim);
+}
+
+.search-container input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px 12px 12px 45px;
+    color: white;
+    outline: none;
+    transition: 0.3s ease;
+    caret-color: var(--accent-purple);
+}
+
+.search-container input:focus { 
+    border-color: var(--accent-purple); 
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ================= SEARCH VIEW LOGIC ================= */
+/* Hidden by default */
+.search-results-section, 
+.search-info-text { 
+    display: none; 
+}
+
+/* Toggle visibility when search-trigger is checked by JavaScript */
+#search-trigger:checked ~ .search-results-section { 
+    display: block !important; 
+}
+
+#search-trigger:checked ~ .explore-header .search-info-text { 
+    display: block !important; 
+}
+
+#search-trigger:checked ~ .default-view { 
+    display: none !important; 
+}
+
+/* Search Results Card Styling */
+.search-card b { 
+    font-size: 14px; 
+    margin-top: 8px; 
+}
+
+.search-card img { 
+    aspect-ratio: 1/1; 
+    object-fit: cover; 
+}
+
+/* ================= RESPONSIVE ZOOM LOGIC ================= */
+.col-zoom-logic {
+    flex: 0 0 auto;
+    padding: 0 10px; 
+    transition: width 0.3s ease;
+}
+
+@media (min-width: 992px) { .col-zoom-logic { width: 25%; } }
+@media (min-width: 1500px) { .col-zoom-logic { width: 20%; } }
+@media (min-width: 1850px) { .col-zoom-logic { width: 16.666%; } }
+@media (min-width: 2150px) { .col-zoom-logic { width: 14.285%; } }
+
+/* ================= CATEGORY CARDS STYLING ================= */
+.category-card {
+    width: 100%;
+    height: 180px; 
+    border-radius: 18px; 
+    padding: 22px; 
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.3s ease;
+}
+
+.category-card:hover { 
+    transform: scale(1.03) translateY(-3px);
+    z-index: 10;
+}
+
+.category-card span {
+    font-size: 39px; 
+    display: block;
+    margin-bottom: auto; 
+}
+
+.category-card b { 
+    font-size: 20px; 
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    font-weight: 500;
+    color: white;
+}
+
+.category-card::after {
+    content: "";
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 55%;
+    height: 55%;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+}
+
+/* Category Colors */
+.cat-red { background: #ff4d6d; }
+.cat-orange { background: #fb8500; }
+.cat-blue { background: #219ebc; }
+.cat-teal { background: #2ec4b6; }
+.cat-purple { background: #9d4edd; }
+.cat-gray { background: #4a4e69; }
+.cat-green { background: #06d6a0; }
+.cat-indigo { background: #7209b7; }
+
+/* ================= TOP CHARTS STYLING ================= */
+.chart-card {
+    background-color: #1c2738;
+    border-radius: 14px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: transform 0.5s ease, background 0.3s ease;
+}
+
+.chart-card:hover { 
+    background-color: #253347; 
+    transform: scale(1.03) translateY(-3px);
+}
+
+.chart-card .rank {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dim); 
+    min-width: 30px;
+    transition: color 0.3s ease;
+}
+
+.chart-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.chart-content { flex-grow: 1; }
+
+.chart-title { 
+    display: block; 
+    font-size: 20px; 
+    font-weight: 600; 
+    color: white; 
+    transition: color 0.3s ease; 
+}
+
+.chart-card:hover .chart-title,
+.chart-card:hover .rank {
+    color: var(--accent-purple);
+}
+
+.chart-content small { 
+    color: var(--text-dim); 
+    font-size: 14px; 
+}
+
+.chart-meta { text-align: right; }
+.chart-meta span { display: block; font-size: 14px; font-weight: 600; color: var(--text-dim); }
+.chart-meta small { color: var(--text-dim); font-size: 12px; }
+
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media (max-width: 991px) {
+    .sidebar { display: none; }
+    
+    .main {
+        padding: 25px 20px !important;
+        padding-bottom: 180px !important; 
+    }
+
+    .bottom-nav {
+        position: fixed;
+        bottom: 73px;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #1c2738;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 999;
+    }
+
+    .bottom-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--text-dim);
+        cursor: pointer;
+    }
+
+    .bottom-link span { display: none; }
+    .bottom-link i { font-size: 22px; }
+    .nav-logic:checked + .bottom-link { color: var(--accent-purple) !important; }
+}
+
+@media (max-width: 767px) {
+    .category-card {
+        height: 140px; 
+        padding: 15px;
+    }
+    .category-card span { font-size: 32px; }
+    .category-card b {
+        font-size: 16px; 
+        bottom: 15px;
+        left: 15px;
+    }
+}

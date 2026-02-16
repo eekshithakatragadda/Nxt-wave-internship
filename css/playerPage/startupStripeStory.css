@@ -1,0 +1,5 @@
+/* Specific background for The Stripe Story episode */
+body {
+    background: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1000') no-repeat center center fixed;
+    background-size: cover;
+}

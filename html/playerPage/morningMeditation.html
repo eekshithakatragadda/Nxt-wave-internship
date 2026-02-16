@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playing: Morning Meditation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cfb05c37f2.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="../../css/playerPage/aiRev.css">
+    <link rel="stylesheet" href="../../css/playerPage/morningMeditation.css">
+</head>
+<body>
+    <div class="player-overlay">
+        <header class="player-header d-flex justify-content-between align-items-center p-4">
+            <i class="fa-solid fa-xmark cursor-pointer fs-4" onclick="history.back()"></i>
+            <div class="header-actions">
+                <i class="fa-solid fa-share-nodes me-4 cursor-pointer"></i>
+                <i class="fa-regular fa-heart cursor-pointer"></i>
+            </div>
+        </header>
+
+        <main class="player-content text-center">
+            <div class="cover-wrapper mb-5">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600" class="main-cover">
+            </div>
+            
+            <h2 class="episode-title">10-Minute Morning Meditation</h2>
+            <p class="show-author">Mindful Moments</p>
+
+            <div class="seek-container px-5 mt-5">
+                <input type="range" class="custom-slider main-seek" id="mainSeek" min="0" max="600" value="0">
+                <div class="time-info d-flex justify-content-between mt-2">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">10:00</span>
+                </div>
+            </div>
+
+            <div class="main-controls d-flex justify-content-center align-items-center gap-5 my-4">
+                <i class="fa-solid fa-backward-step ctrl-icon"></i>
+                <div class="play-btn-large" id="playToggle">
+                    <i class="fa-solid fa-pause"></i>
+                </div>
+                <i class="fa-solid fa-forward-step ctrl-icon"></i>
+            </div>
+
+            <div class="utility-bar d-flex justify-content-center align-items-center gap-4 mt-5">
+                <div class="playback-speed-chip" id="speedToggle">1x</div>
+                <div class="volume-box d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-volume-low text-secondary"></i>
+                    <input type="range" class="custom-slider vol-slider" id="volSlider" value="70">
+                </div>
+                <i class="fa-solid fa-moon text-secondary cursor-pointer"></i>
+                <i class="fa-solid fa-file-lines text-secondary cursor-pointer"></i>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/player.js"></script>
+</body>
+</html>

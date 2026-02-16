@@ -1,0 +1,125 @@
+/* ================= HEADER & FILTER PILLS ================= */
+.library-header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+}
+
+.filter-logic { display: none; }
+
+.filter-pill {
+    padding: 8px 24px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-pill:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.filter-logic:checked + .filter-pill {
+    background: linear-gradient(90deg, #8b5cf6, #a855f7);
+    color: white;
+}
+
+/* ================= EPISODE CARD & BULGE ANIMATION ================= */
+.episode-card {
+    background-color: #1c2738;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    /* Smooth transition for the 'bulge' effect */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.episode-card:hover {
+    background-color: #212d40; /* Subtle fade background */
+    transform: scale(1.02); /* Bulge effect popping out */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Lifted shadow */
+    z-index: 5;
+}
+
+.episode-body {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    gap: 20px;
+}
+
+/* Thumbnail Darkening (Matches Saved Episodes & Home) */
+.thumb {
+    position: relative;
+    width: 70px; /* Increased image size */
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.play-btn-circle {
+    background-color: #a855f7;
+    width: 40px; /* Increased play button size */
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+}
+
+.episode-card:hover .thumb img {
+    filter: brightness(0.5); /* Thumbnail darkening */
+}
+
+.episode-card:hover .play-overlay {
+    opacity: 1; /* Shows play button */
+}
+
+/* ================= TEXT STYLING ================= */
+.episode-info b {
+    display: block;
+    font-size: 16px;
+    color: white;
+}
+
+.show-title {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.text-muted {
+    font-size: 12px;
+    color: #64748b !important;
+}
+
+.main {
+    padding-bottom: 120px !important;
+}

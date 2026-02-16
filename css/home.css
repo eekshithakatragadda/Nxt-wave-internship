@@ -1,5 +1,4 @@
 /* ================= GLOBAL SETTINGS ================= */
-/* Place this near the top of your CSS file with your other hidden logic */
 .nav-logic {
     display: none;
 }
@@ -57,18 +56,12 @@ body {
     padding: 10px 25px;
 }
 
-/* 1. Hide the radio buttons so they don't show on screen */
-.nav-logic {
-    display: none;
-}
-
-/* 2. Base style for the sidebar links (now labels) */
 .side-link {
     display: flex;
     align-items: center;
     gap: 15px;
     padding: 12px 25px;
-    color: #94a3b8; /* Muted gray text */
+    color: #94a3b8;
     text-decoration: none;
     border-radius: 12px;
     margin-bottom: 8px;
@@ -76,21 +69,16 @@ body {
     cursor: pointer;
 }
 
-/* 3. HOVER EFFECT (Like the Library option) */
-/* This highlight appears when you place the cursor on an item */
 .side-link:hover {
     background-color: rgba(255, 255, 255, 0.1); 
     color: #ffffff;
 }
 
-/* 4. CLICKED EFFECT (Like the Home option) */
-/* When a radio button is 'checked', style the label immediately after it (+) */
 .nav-logic:checked + .side-link {
-    background-color: rgba(168, 85, 247, 0.15); /* Light purple tint */
-    color: #a855f7; /* Purple text */
+    background-color: rgba(168, 85, 247, 0.15);
+    color: #a855f7;
 }
 
-/* Ensure the icon also turns purple for the clicked item */
 .nav-logic:checked + .side-link i {
     color: #a855f7;
 }
@@ -106,14 +94,14 @@ body {
 .side-link.active,
 .side-link:focus,
 .side-link.active {
-    background-color: rgba(168, 85, 247, 0.15); /* Light purple tint background */
-    color: #a855f7; /* Purple text color */
+    background-color: rgba(168, 85, 247, 0.15);
+    color: #a855f7;
     outline: none;
 }
 
 .side-link:hover:not(.active) {
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle white highlight */
-    color: #ffffff; /* Text turns white */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
 }
 
 /* ================= MAIN CONTENT ================= */
@@ -198,21 +186,19 @@ body {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
-    background-color: #000; /* Provides a solid black base for the darkening effect */
+    background-color: #000;
 }
 
 .img-container img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    /* Added filter transition to make the darkening smooth */
     transition: transform 0.4s ease, filter 0.4s ease; 
 }
 
-/* FEATURE: Image gets darker on hover */
 .image-card:hover .img-container img {
     transform: scale(1.1);
-    filter: brightness(0.5); /* Reduces brightness to 50% when cursor is placed */
+    filter: brightness(0.5);
 }
 
 .play-circle {
@@ -229,7 +215,7 @@ body {
     opacity: 0;
     transition: 0.3s ease;
     color: #ffffff;
-    z-index: 2; /* Ensures the play button stays visible above the darkened image */
+    z-index: 2;
 }
 
 .image-card:hover .play-circle {
@@ -240,12 +226,9 @@ body {
     display: block;
     font-size: 15px;
     margin-top: 8px;
-    /* Transition added for smooth color change */
     transition: color 0.3s ease; 
 }
 
-/* FEATURE: Heading color change on hover */
-/* This specifically turns the text purple when the card is hovered */
 .image-card:hover .card-info b {
     color: #a855f7; 
 }
@@ -273,6 +256,7 @@ body {
     gap: 15px;
     height: 100px;
     transition: all 0.3s ease;
+    border: 1.5px solid transparent; 
 }
 
 .continue-card:hover {
@@ -286,21 +270,91 @@ body {
     border-radius: 12px;
     overflow: hidden;
     flex-shrink: 0;
+    position: relative;
 }
 
 .thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.play-btn-circle {
+    background-color: #a855f7;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+}
+
+.continue-card:hover .thumb img {
+    filter: brightness(0.5);
+}
+
+.continue-card:hover .play-overlay {
+    opacity: 1;
 }
 
 .info-text b {
     font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
 
 .info-text small {
     font-size: 0.75rem;
     color: #94a3b8;
+}
+
+/* Playback State Styling */
+.pod-selector-logic:checked + .continue-card-label .continue-card {
+    border: 1.5px solid #A855F7;
+    background-color: rgba(168, 85, 247, 0.1);
+}
+
+.pod-selector-logic:checked + .continue-card-label .info-text b {
+    color: #A855F7;
+}
+
+/* Playing Animation - Right Center Aligned */
+.playing-animation {
+    display: none;
+    gap: 3px;
+    height: 20px;
+    align-items: flex-end;
+}
+
+.pod-selector-logic:checked + .continue-card-label .playing-animation {
+    display: flex;
+}
+
+.bar {
+    width: 3px;
+    background: #A855F7;
+    border-radius: 2px;
+    animation: bounce 0.8s infinite alternate ease-in-out;
+}
+
+@keyframes bounce {
+    0% { height: 5px; }
+    100% { height: 20px; }
 }
 
 /* ================= PLAYER BAR ================= */
@@ -310,19 +364,93 @@ body {
     width: 100%;
     height: 73px;
     background-color: #1c2738;
-    border-top: 4px solid rgba(255, 255, 255, 0.1);
-    z-index: 1000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1001;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: #94a3b8;
+}
+
+.player-controls i {
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.player-controls i:hover {
+    color: white;
+}
+
+.play-toggle {
+    font-size: 20px;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    background: rgba(168, 85, 247, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.1);
+}
+
+/* Custom Thin Volume Bar with Purple Dot */
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 140px;
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    background: #334155; /* Thin Dark Grey Line */
+    border-radius: 5px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #a855f7; /* Purple Dot */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #a855f7;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.maximize-icon {
+    color: #94a3b8;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 /* ================= BOTTOM NAV (XS–MD) ================= */
 .bottom-nav {
     position: fixed;
-    bottom: 0; /* Also set this to 0 to align with the bottom */
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: rgba(28, 39, 56, 0.85) !important; /* Transparent color */
-    backdrop-filter: blur(10px); /* Frosted glass effect */
+    background-color: rgba(28, 39, 56, 0.85) !important;
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-around;
@@ -332,7 +460,6 @@ body {
 }
 
 @media (max-width: 991.98px) {
-
     .sidebar {
         display: none;
     }
@@ -356,46 +483,37 @@ body {
         z-index: 999;
     }
 
-    /* Update these rules inside the @media (max-width: 991.98px) block */
+    .bottom-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #94a3b8;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
 
-.bottom-link {
-    display: flex;
-    flex-direction: column; /* Stacks icon above text */
-    align-items: center;
-    justify-content: center;
-    color: #94a3b8; /* Normal muted color */
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
+    .bottom-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+    }
 
-/* --- HOVER EFFECT (Like Library - White highlight) --- */
-/* This highlight appears when you place the cursor on an icon */
-.bottom-link:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle white highlight */
-    color: #ffffff; /* Turns text/icon white */
-}
+    .nav-logic:checked + .bottom-link {
+        background-color: rgba(168, 85, 247, 0.15);
+        color: #a855f7 !important;
+    }
 
-/* --- CLICKED EFFECT (Like Home - Purple highlight) --- */
-/* This targets the label immediately following a checked radio button */
-.nav-logic:checked + .bottom-link {
-    background-color: rgba(168, 85, 247, 0.15); /* Light purple tint background */
-    color: #a855f7 !important; /* Force purple text */
-}
+    .nav-logic:checked + .bottom-link i {
+        color: #a855f7;
+    }
 
-/* Ensure the icon specifically turns purple when checked */
-.nav-logic:checked + .bottom-link i {
-    color: #a855f7;
-}
+    .bottom-link.active {
+        color: inherit;
+    }
 
-/* Remove the old fixed 'active' class styling if it exists */
-.bottom-link.active {
-    color: inherit;
-}
-
-    /* ICON ONLY */
     .bottom-link span {
         display: none;
     }
@@ -403,55 +521,10 @@ body {
     .bottom-link i {
         font-size: 22px;
     }
-
-   
 }
 
 @media (min-width: 992px) {
     .bottom-nav {
         display: none;
     }
-}
-/* Ensure the thumb can hold the overlay */
-.thumb {
-    position: relative;
-}
-
-/* The play button styling */
-.play-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0; /* Hidden by default */
-    transition: 0.3s ease;
-}
-
-.play-btn-circle {
-    background-color: #a855f7; /* Purple color from your logo */
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 12px;
-}
-
-/* Hover Effects */
-.continue-card:hover .thumb img {
-    filter: brightness(0.5); /* Darkens the image */
-}
-
-.continue-card:hover .play-overlay {
-    opacity: 1; /* Shows the play button */
-}
-
-.continue-card:hover {
-    background-color: #161f2d; /* Slightly darkens the card background */
 }

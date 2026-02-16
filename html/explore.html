@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Echo | Explore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cfb05c37f2.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/explore.css">
+</head>
+<body>
+
+<div class="d-flex">
+    
+    <aside class="sidebar">
+        <div class="logo-section">
+            <div class="logo-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
+            <span class="logo-text">Echo</span>
+        </div>
+        <hr class="sidebar-divider">
+
+        <nav class="mt-4" id="sidebar-nav">
+            <input type="radio" name="sidebar-nav" id="nav-home" class="nav-logic">
+            <label for="nav-home" class="side-link" onclick="location.href='home.html'">
+                <i class="fa-solid fa-house"></i><span>Home</span>
+            </label>
+
+            <input type="radio" name="sidebar-nav" id="nav-explore" class="nav-logic" checked>
+            <label for="nav-explore" class="side-link" onclick="location.href='explore.html'">
+                <i class="fa-solid fa-compass"></i><span>Explore</span>
+            </label>
+
+            <input type="radio" name="sidebar-nav" id="nav-library" class="nav-logic">
+            <label for="nav-library" class="side-link" onclick="location.href='library/library-subshows.html'">
+                <i class="fa-solid fa-book-open"></i><span>Library</span>
+            </label>
+
+            <input type="radio" name="sidebar-nav" id="nav-settings" class="nav-logic">
+            <label for="nav-settings" class="side-link" onclick="location.href='settings.html'">
+                <i class="fa-solid fa-gear"></i><span>Settings</span>
+            </label>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <input type="checkbox" id="search-trigger" class="d-none">
+        
+        <header class="explore-header">
+            <h1>Explore</h1>
+            <div class="search-container mt-3">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <label for="search-trigger" class="w-100">
+                    <input type="text" id="search-input" placeholder="Search podcasts, episodes, or hosts...">
+                </label>
+            </div>
+            <div class="search-info-text mt-4">
+                <h5 id="search-results-count" style="color: white; font-weight: 700;">Results from Top Charts</h5>
+            </div>
+        </header>
+        
+        <section class="search-results-section mt-4">
+            <div id="no-results-msg" class="text-center py-5 d-none">
+                <i class="fa-solid fa-circle-question mb-3" style="font-size: 48px; color: #94a3b8;"></i>
+                <h4 style="color: white;">No results found</h4>
+                <p style="color: #94a3b8;">Try searching for something else</p>
+            </div>
+
+            <div class="row g-4" id="results-grid">
+                <div class="col-6 col-md-4 col-lg-2 search-item" data-title="the daily tech">
+                    <div class="search-card">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300" class="img-fluid rounded-3 mb-2" alt="">
+                        <b class="d-block text-white">The Daily Tech</b>
+                        <small class="text-muted">Sarah Chen</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 search-item" data-title="mystery files">
+                    <div class="search-card">
+                        <img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=300" class="img-fluid rounded-3 mb-2" alt="">
+                        <b class="d-block text-white">Mystery Files</b>
+                        <small class="text-muted">Detective Audio</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 search-item" data-title="laugh track">
+                    <div class="search-card">
+                        <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=300" class="img-fluid rounded-3 mb-2" alt="">
+                        <b class="d-block text-white">Laugh Track</b>
+                        <small class="text-muted">Comedy Central</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 search-item" data-title="science unlocked">
+                    <div class="search-card">
+                        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=300" class="img-fluid rounded-3 mb-2" alt="">
+                        <b class="d-block text-white">Science Unlocked</b>
+                        <small class="text-muted">Dr. Maya Williams</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 search-item" data-title="morning briefing">
+                    <div class="search-card">
+                        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=300" class="img-fluid rounded-3 mb-2" alt="">
+                        <b class="d-block text-white">Morning Briefing</b>
+                        <small class="text-muted">Global News Network</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 search-item" data-title="future forward">
+                    <div class="search-card">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300" class="img-fluid rounded-3 mb-2" alt="">
+                        <b class="d-block text-white">Future Forward</b>
+                        <small class="text-muted">Innovation Lab</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="default-view">
+            <section class="section mt-5">
+                <h4 class="mb-4">Browse Categories</h4>
+                <div class="row g-3">
+                    <div class="col-6 col-zoom-logic">
+                        <div class="category-card cat-red"><span>🔍</span><b>True Crime</b></div>
+                    </div>
+                    <div class="col-6 col-zoom-logic">
+                        <div class="category-card cat-orange"><span>😂</span><b>Comedy</b></div>
+                    </div>
+                    <div class="col-6 col-zoom-logic">
+                        <div class="category-card cat-blue"><span>💻</span><b>Technology</b></div>
+                    </div>
+                    <div class="col-6 col-zoom-logic">
+                        <div class="category-card cat-teal"><span>📰</span><b>News</b></div>
+                    </div>
+                    <div class="col-6 col-zoom-logic">
+                        <div class="category-card cat-purple"><span>🔬</span><b>Science</b></div>
+                    </div>
+                    <div class="col-6 col-zoom-logic">
+                        <div class="category-card cat-gray"><span>💼</span><b>Business</b></div>
+                    </div>
+                    <div class="col-6 col-zoom-logic">
+                        <div class="category-card cat-green"><span>🧘</span><b>Health</b></div>
+                    </div>
+                    <div class="col-6 col-zoom-logic">
+                        <div class="category-card cat-indigo"><span>🌍</span><b>Society</b></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h4 class="mb-4">Top Charts</h4>
+                <div class="row g-3">
+                    <div class="col-12 col-lg-4">
+                        <a href="detailsPage/dailyTech.html" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="chart-card">
+                            <span class="rank">1</span>
+                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=100" alt="">
+                            <div class="chart-content">
+                                <b class="chart-title">The Daily Tech</b>
+                                <small>Sarah Chen</small>
+                            </div>
+                            <div class="chart-meta">
+                                <span>1.2M</span>
+                                <small>245 eps</small>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <a href="detailsPage/mysteryFiles.html" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="chart-card">
+                            <span class="rank">2</span>
+                            <img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=100" alt="">
+                            <div class="chart-content">
+                                <b class="chart-title">Mystery Files</b>
+                                <small>Detective Audio</small>
+                            </div>
+                            <div class="chart-meta">
+                                <span>2.5M</span>
+                                <small>189 eps</small>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <a href="detailsPage/laughTrack.html" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="chart-card">
+                            <span class="rank">3</span>
+                            <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=100" alt="">
+                            <div class="chart-content">
+                                <b class="chart-title">Laugh Track</b>
+                                <small>Comedy Central</small>
+                            </div>
+                            <div class="chart-meta">
+                                <span>890K</span>
+                                <small>312 eps</small>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <a href="detailsPage/scienceUnlocked.html" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="chart-card">
+                            <span class="rank">4</span>
+                            <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=100" alt="">
+                            <div class="chart-content">
+                                <b class="chart-title">Science Unlocked</b>
+                                <small>Dr. Maya Williams</small>
+                            </div>
+                            <div class="chart-meta">
+                                <span>750K</span>
+                                <small>156 eps</small>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <a href="detailsPage/morningBrefing.html" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="chart-card">
+                            <span class="rank">5</span>
+                            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100" alt="">
+                            <div class="chart-content">
+                                <b class="chart-title">Morning Briefing</b>
+                                <small>Global News Network</small>
+                            </div>
+                            <div class="chart-meta">
+                                <span>3.1M</span>
+                                <small>520 eps</small>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<div class="player-bar-fake">
+    <div class="container-fluid h-100 px-5">
+        <div class="default-player-msg" style="color:#94A3B8; margin-top:17px;font-size:18px;">Select an episode to start listening</div>
+    </div>
+</div>
+
+<nav class="bottom-nav">
+    <input type="radio" name="mobile-nav" id="mob-home" class="nav-logic">
+    <label for="mob-home" class="bottom-link" onclick="location.href='home.html'">
+        <i class="fa-regular fa-house"></i>
+        <span>Home</span>
+    </label>
+
+    <input type="radio" name="mobile-nav" id="mob-explore" class="nav-logic" checked>
+    <label for="mob-explore" class="bottom-link" onclick="location.href='explore.html'">
+        <i class="fa-regular fa-compass"></i>
+        <span>Explore</span>
+    </label>
+
+    <input type="radio" name="mobile-nav" id="mob-library" class="nav-logic">
+    <label for="mob-library" class="bottom-link" onclick="location.href='library/library-subshows.html'">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Library</span>
+    </label>
+
+    <input type="radio" name="mobile-nav" id="mob-settings" class="nav-logic">
+    <label for="mob-settings" class="bottom-link" onclick="location.href='settings.html'">
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+    </label>
+</nav>
+
+<script>
+    const searchInput = document.getElementById('search-input');
+    const searchTrigger = document.getElementById('search-trigger');
+    const resultsCountText = document.getElementById('search-results-count');
+    const searchItems = document.querySelectorAll('.search-item');
+    const noResultsMsg = document.getElementById('no-results-msg');
+
+    searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        
+        if (query.length > 0) {
+            searchTrigger.checked = true;
+            let visibleCount = 0;
+
+            searchItems.forEach(item => {
+                const title = item.getAttribute('data-title');
+                if (title.includes(query)) {
+                    item.style.setProperty('display', 'block', 'important');
+                    visibleCount++;
+                } else {
+                    item.style.setProperty('display', 'none', 'important');
+                }
+            });
+
+            resultsCountText.innerText = `${visibleCount} results for "${query}"`;
+
+            if (visibleCount === 0) {
+                noResultsMsg.classList.remove('d-none');
+            } else {
+                noResultsMsg.classList.add('d-none');
+            }
+        } else {
+            searchTrigger.checked = false;
+            noResultsMsg.classList.add('d-none');
+        }
+    });
+</script>
+
+</body>
+</html>

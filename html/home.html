@@ -14,7 +14,6 @@
 
 <div class="d-flex">
 
-    <!-- ================= SIDEBAR ================= -->
     <aside class="sidebar">
         <div class="logo-section">
             <div class="logo-icon">
@@ -24,37 +23,35 @@
         </div>
         <hr class="sidebar-divider">
 
-        <nav class="mt-4" id="sidebar-nav">
+  <nav class="mt-4" id="sidebar-nav">
     <input type="radio" name="sidebar-nav" id="nav-home" class="nav-logic" checked>
-    <label for="nav-home" class="side-link">
+    <label for="nav-home" class="side-link" onclick="location.href='home.html'">
         <i class="fa-solid fa-house"></i>
         <span>Home</span>
     </label>
 
     <input type="radio" name="sidebar-nav" id="nav-explore" class="nav-logic">
-    <label for="nav-explore" class="side-link">
+    <label for="nav-explore" class="side-link" onclick="location.href='explore.html'">
         <i class="fa-solid fa-compass"></i>
         <span>Explore</span>
     </label>
 
     <input type="radio" name="sidebar-nav" id="nav-library" class="nav-logic">
-    <label for="nav-library" class="side-link">
+    <label for="nav-library" class="side-link" onclick="location.href='library/library-subshows.html'">
         <i class="fa-solid fa-book-open"></i>
         <span>Library</span>
     </label>
 
     <input type="radio" name="sidebar-nav" id="nav-settings" class="nav-logic">
-    <label for="nav-settings" class="side-link">
+    <label for="nav-settings" class="side-link" onclick="location.href='settings.html'">
         <i class="fa-solid fa-gear"></i>
         <span>Settings</span>
     </label>
 </nav>
     </aside>
 
-    <!-- ================= MAIN ================= -->
     <main class="main">
 
-        <!-- HERO -->
         <section class="hero">
             <div class="hero-content">
                 <div class="daily-mix">
@@ -69,15 +66,19 @@
                 </p>
 
                 <div class="mt-4">
-                    <button class="btn listen-btn">
-                        <i class="fa-solid fa-play me-2"></i>Listen Now
-                    </button>
-                    <button class="btn view-btn ms-2">View Show</button>
+                    <button class="btn listen-btn" 
+        data-title="The Daily Tech" 
+        data-author="Sarah Chen" 
+        data-img="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=400&fit=crop"
+        data-link="playerPage/aiRev.html"
+        onclick="listenNow(this)">
+    <i class="fa-solid fa-play me-2"></i>Listen Now
+</button>
+                    <button class="btn view-btn ms-2" onclick="location.href='detailsPage/dailyTech.html'">View Show</button>
                 </div>
             </div>
         </section>
 
-        <!-- ================= TRENDING NOW ================= -->
         <section class="section">
             <div class="section-header d-flex justify-content-between align-items-center">
                 <h4>Trending Now</h4>
@@ -86,6 +87,7 @@
 
             <div class="row g-4">
                 <div class="col-6 col-md-4 col-lg-2">
+                    <a href="detailsPage/dailyTech.html" style="text-decoration: none; color: inherit; display: block;">
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=400&fit=crop">
@@ -96,9 +98,11 @@
                             <small>Sarah Chen</small>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-6 col-md-4 col-lg-2">
+                    <a href="detailsPage/mysteryFiles.html" style="text-decoration: none; color: inherit; display: block;">
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=400&h=400&fit=crop">
@@ -109,9 +113,11 @@
                             <small>Detective Audio</small>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-6 col-md-4 col-lg-2">
+                    <a href="detailsPage/laughTrack.html" style="text-decoration: none; color: inherit; display: block;">
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400&h=400&fit=crop">
@@ -122,9 +128,11 @@
                             <small>Comedy Central</small>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-6 col-md-4 col-lg-2">
+                    <a href="detailsPage/scienceUnlocked.html" style="text-decoration: none; color: inherit; display: block;">
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=400&h=400&fit=crop">
@@ -135,9 +143,11 @@
                             <small>Dr. Maya Williams</small>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-6 col-md-4 col-lg-2">
+                    <a href="detailsPage/morningBrefing.html" style="text-decoration: none; color: inherit; display: block;">
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=400&fit=crop">
@@ -148,9 +158,11 @@
                             <small>Global News Network</small>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-6 col-md-4 col-lg-2">
+                <a href="detailsPage/startupStories.html" style="text-decoration: none; color: inherit; display: block;">
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=400&fit=crop">
@@ -161,95 +173,115 @@
                             <small>Venture Voice</small>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- ================= CONTINUE LISTENING ================= -->
         <section class="section">
             <h4 class="mb-4">Continue Listening</h4>
 
             <div class="row g-3">
 
                 <div class="col-12 col-md-6 col-lg-3">
-                    <input type="radio" name="podcast-select" id="pod-1" class="pod-selector-logic">
+                    <input type="radio" name="podcast-select" id="pod-1" class="pod-selector-logic" data-link="playerPage/aiRev.html">
                     <label for="pod-1" class="continue-card-label">
                         <div class="continue-card">
                             <div class="thumb">
-    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=400&fit=crop">
-    <div class="play-overlay">
-        <div class="play-btn-circle">
-            <i class="fa-solid fa-play"></i>
-        </div>
-    </div>
-</div>
-                            <div class="info-text">
-                                <b>The AI Revolution: What's Next?</b>
-                                <small class="d-block mt-1">The Daily Tech</small>
-                                <small>2024-01-15 <i class="fa-regular fa-clock mx-1"></i> 45:32</small>
+                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=400&fit=crop">
+                                <div class="play-overlay">
+                                    <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                            </div>
+                            <div class="info-text d-flex justify-content-between align-items-center w-100">
+                                <div>
+                                    <b>The AI Revolution: What's Next?</b>
+                                    <small class="d-block mt-1">The Daily Tech</small>
+                                    <small>2024-01-15 <i class="fa-regular fa-clock mx-1"></i> 45:32</small>
+                                </div>
+                                <div class="playing-animation">
+                                    <div class="bar" style="animation-delay: 0.1s"></div>
+                                    <div class="bar" style="animation-delay: 0.3s"></div>
+                                    <div class="bar" style="animation-delay: 0.2s"></div>
+                                </div>
                             </div>
                         </div>
                     </label>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-3">
-                    <input type="radio" name="podcast-select" id="pod-2" class="pod-selector-logic">
+                    <input type="radio" name="podcast-select" id="pod-2" class="pod-selector-logic" data-link="playerPage/appleVision.html">
                     <label for="pod-2" class="continue-card-label">
                         <div class="continue-card">
                             <div class="thumb">
-    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=400&fit=crop">
-    <div class="play-overlay">
-        <div class="play-btn-circle">
-            <i class="fa-solid fa-play"></i>
-        </div>
-    </div>
-</div>
-                            <div class="info-text">
-                                <b>Apple Vision Pro: First Impressions</b>
-                                <small class="d-block mt-1">The Daily Tech</small>
-                                <small>2024-01-12 <i class="fa-regular fa-clock mx-1"></i> 38:15</small>
+                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=400&fit=crop">
+                                <div class="play-overlay">
+                                    <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                            </div>
+                            <div class="info-text d-flex justify-content-between align-items-center w-100">
+                                <div>
+                                    <b>Apple Vision Pro: First Impressions</b>
+                                    <small class="d-block mt-1">The Daily Tech</small>
+                                    <small>2024-01-12 <i class="fa-regular fa-clock mx-1"></i> 38:15</small>
+                                </div>
+                                <div class="playing-animation">
+                                    <div class="bar" style="animation-delay: 0.1s"></div>
+                                    <div class="bar" style="animation-delay: 0.3s"></div>
+                                    <div class="bar" style="animation-delay: 0.2s"></div>
+                                </div>
                             </div>
                         </div>
                     </label>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-3">
-                    <input type="radio" name="podcast-select" id="pod-3" class="pod-selector-logic">
+                    <input type="radio" name="podcast-select" id="pod-3" class="pod-selector-logic" data-link="playerPage/mysteryFiles.html">
                     <label for="pod-3" class="continue-card-label">
                         <div class="continue-card">
                             <div class="thumb">
-    <img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=400&h=400&fit=crop">
-    <div class="play-overlay">
-        <div class="play-btn-circle">
-            <i class="fa-solid fa-play"></i>
-        </div>
-    </div>
-</div>
-                            <div class="info-text">
-                                <b>The Disappearance of Flight 370</b>
-                                <small class="d-block mt-1">Mystery Files</small>
-                                <small>2024-01-14 <i class="fa-regular fa-clock mx-1"></i> 52:48</small>
+                                <img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=400&h=400&fit=crop">
+                                <div class="play-overlay">
+                                    <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                            </div>
+                            <div class="info-text d-flex justify-content-between align-items-center w-100">
+                                <div>
+                                    <b>The Disappearance of Flight 370</b>
+                                    <small class="d-block mt-1">Mystery Files</small>
+                                    <small>2024-01-14 <i class="fa-regular fa-clock mx-1"></i> 52:48</small>
+                                </div>
+                                <div class="playing-animation">
+                                    <div class="bar" style="animation-delay: 0.1s"></div>
+                                    <div class="bar" style="animation-delay: 0.3s"></div>
+                                    <div class="bar" style="animation-delay: 0.2s"></div>
+                                </div>
                             </div>
                         </div>
                     </label>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-3">
-                    <input type="radio" name="podcast-select" id="pod-4" class="pod-selector-logic">
+                    <input type="radio" name="podcast-select" id="pod-4" class="pod-selector-logic" data-link="playerPage/comedyGold.html">
                     <label for="pod-4" class="continue-card-label">
                         <div class="continue-card">
                             <div class="thumb">
-    <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400&h=400&fit=crop">
-    <div class="play-overlay">
-        <div class="play-btn-circle">
-            <i class="fa-solid fa-play"></i>
-        </div>
-    </div>
-</div>
-                            <div class="info-text">
-                                <b>Comedy Gold: Best of 2023</b>
-                                <small class="d-block mt-1">Laugh Track</small>
-                                <small>2024-01-10 <i class="fa-regular fa-clock mx-1"></i> 1:02:30</small>
+                                <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400&h=400&fit=crop">
+                                <div class="play-overlay">
+                                    <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                            </div>
+                            <div class="info-text d-flex justify-content-between align-items-center w-100">
+                                <div>
+                                    <b>Comedy Gold: Best of 2023</b>
+                                    <small class="d-block mt-1">Laugh Track</small>
+                                    <small>2024-01-10 <i class="fa-regular fa-clock mx-1"></i> 1:02:30</small>
+                                </div>
+                                <div class="playing-animation">
+                                    <div class="bar" style="animation-delay: 0.1s"></div>
+                                    <div class="bar" style="animation-delay: 0.3s"></div>
+                                    <div class="bar" style="animation-delay: 0.2s"></div>
+                                </div>
                             </div>
                         </div>
                     </label>
@@ -258,7 +290,6 @@
             </div>
         </section>
 
-        <!-- ================= NEW RELEASES ================= -->
         <section class="section">
             <div class="section-header d-flex justify-content-between align-items-center">
                 <h4>New Releases</h4>
@@ -267,6 +298,7 @@
 
             <div class="row g-4">
                 <div class="col-6 col-md-4 col-lg-2">
+                    <a href="detailsPage/laughTrack.html" style="text-decoration: none; color: inherit; display: block;">
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400&h=400&fit=crop">
@@ -277,9 +309,12 @@
                             <small>Comedy Central</small>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-6 col-md-4 col-lg-2">
+                    <a href="detailsPage/scienceUnlocked.html" style="text-decoration: none; color: inherit; display: block;">
+                    
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=400&h=400&fit=crop">
@@ -290,9 +325,11 @@
                             <small>Dr. Maya Williams</small>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-6 col-md-4 col-lg-2">
+                   <a href="detailsPage/morningBrefing.html" style="text-decoration: none; color: inherit; display: block;"> 
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=400&fit=crop">
@@ -303,9 +340,11 @@
                             <small>Global News Network</small>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-6 col-md-4 col-lg-2">
+                    <a href="detailsPage/startupStories.html" style="text-decoration: none; color: inherit; display: block;">
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=400&fit=crop">
@@ -316,9 +355,11 @@
                             <small>Venture Voice</small>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-6 col-md-4 col-lg-2">
+                 <a href="detailsPage/mindfulMoments.html" style="text-decoration: none; color: inherit; display: block;">  
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=400&fit=crop">
@@ -329,9 +370,11 @@
                             <small>Wellness Weekly</small>
                         </div>
                     </div>
+                    </a> 
                 </div>
 
                 <div class="col-6 col-md-4 col-lg-2">
+                    <a href="detailsPage/futureForward.html" style="text-decoration: none; color: inherit; display: block;">
                     <div class="image-card">
                         <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=400&fit=crop">
@@ -342,6 +385,7 @@
                             <small>Innovation Lab</small>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -349,38 +393,38 @@
     </main>
 </div>
 
-<!-- ================= PLAYER BAR ================= -->
 <div class="player-bar-fake">
-    <div class="container-fluid h-100 px-5">
-        <div class="default-player-msg" style="color:#94A3B8; margin-top:17px;font-size:18px;">Select an episode to start listening</div>
+    <div id="player-container" class="container-fluid h-100 d-flex align-items-center justify-content-between px-5">
+        <div class="default-player-msg" style="color:#94A3B8; font-size:18px;">Select an episode to start listening</div>
     </div>
 </div>
 
-<!-- ================= BOTTOM NAV (XS–MD) ================= -->
 <nav class="bottom-nav">
     <input type="radio" name="mobile-nav" id="mob-home" class="nav-logic" checked>
-    <label for="mob-home" class="bottom-link">
+    <label for="mob-home" class="bottom-link" onclick="location.href='home.html'">
         <i class="fa-regular fa-house"></i>
         <span>Home</span>
     </label>
 
     <input type="radio" name="mobile-nav" id="mob-explore" class="nav-logic">
-    <label for="mob-explore" class="bottom-link">
+    <label for="mob-explore" class="bottom-link" onclick="location.href='explore.html'">
         <i class="fa-regular fa-compass"></i>
         <span>Explore</span>
     </label>
 
     <input type="radio" name="mobile-nav" id="mob-library" class="nav-logic">
-    <label for="mob-library" class="bottom-link">
+    <label for="mob-library" class="bottom-link" onclick="location.href='library/library-subshows.html'">
         <i class="fa-solid fa-book-open"></i>
         <span>Library</span>
     </label>
 
     <input type="radio" name="mobile-nav" id="mob-settings" class="nav-logic">
-    <label for="mob-settings" class="bottom-link">
+    <label for="mob-settings" class="bottom-link" onclick="location.href='settings.html'">
         <i class="fa-solid fa-gear"></i>
         <span>Settings</span>
     </label>
 </nav>
+
+<script src="../js/player.js"></script>
 </body>
 </html>
