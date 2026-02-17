@@ -30,13 +30,13 @@
 
 /* ================= EPISODE LIST CONTAINER ================= */
 .episode-list {
-    width: 100%; /* Force list to occupy full width of main container */
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .episode-container {
-    width: 100%; /* Ensure container occupies full width */
+    width: 100%;
 }
 
 /* ================= EPISODE CARD & BULGE ANIMATION ================= */
@@ -45,15 +45,14 @@
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
-    width: 100%; /* Cards stretch to the end of the content area */
-    /* Smooth transition for the 'bulge' effect */
+    width: 100%; 
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .episode-card:hover {
-    background-color: #212d40; /* Subtle fade background */
-    transform: scale(1.005); /* Slight bulge for feedback without over-stretching */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Lifted shadow */
+    background-color: #212d40; 
+    transform: scale(1.005); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     z-index: 5;
 }
 
@@ -64,10 +63,10 @@
     gap: 20px;
 }
 
-/* Thumbnail Darkening (Matches Saved Episodes & Home) */
+/* Thumbnail Logic */
 .thumb {
     position: relative;
-    width: 70px; /* Standardized size */
+    width: 70px;
     height: 70px;
     flex-shrink: 0;
     border-radius: 8px;
@@ -107,16 +106,16 @@
 }
 
 .episode-card:hover .thumb img {
-    filter: brightness(0.5); /* Thumbnail darkening */
+    filter: brightness(0.5);
 }
 
 .episode-card:hover .play-overlay {
-    opacity: 1; /* Shows play button */
+    opacity: 1;
 }
 
 /* ================= TEXT STYLING ================= */
 .episode-info {
-    flex-grow: 1; /* This ensures the text area expands to fill the full card width */
+    flex-grow: 1;
 }
 
 .episode-info b {
@@ -136,12 +135,53 @@
     color: #64748b !important;
 }
 
-/* Ensure no radio buttons show */
+/* Hide Radio Logic */
 .pod-selector-logic {
     display: none;
 }
 
 .main {
     padding-bottom: 120px !important;
-    width: 100%; /* Pushes content to edges */
+    width: 100%;
+}
+
+/* ================= MOBILE VIEW SYNC (Matches Home Page) ================= */
+@media (max-width: 991.98px) {
+    .sidebar {
+        display: none !important;
+    }
+
+    .main {
+        margin-left: 0 !important;
+        padding: 25px 20px !important;
+        padding-bottom: 180px !important; /* Spacing for stacked bars */
+    }
+
+    /* THE PLAYER BAR (Shifted up 70px) */
+    .player-bar-fake {
+        position: fixed;
+        bottom: 70px;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #1c2738;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 999;
+    }
+
+    /* BOTTOM NAV APPEARANCE */
+    .bottom-nav {
+        display: flex !important;
+    }
+
+    .bottom-link span {
+        display: none; 
+    }
+
+    .bottom-link i {
+        font-size: 22px;
+    }
 }

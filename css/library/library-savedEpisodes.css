@@ -29,14 +29,12 @@
 }
 
 /* ================= EPISODE LIST CONTAINER ================= */
-/* This ensures the list takes up 100% of the main content area */
 .episode-list {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-/* This ensures each container expands to fill the width */
 .episode-container {
     width: 100%;
 }
@@ -47,7 +45,7 @@
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
-    width: 100%; /* Occupation of the entire width */
+    width: 100%; 
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -103,7 +101,7 @@
 /* Animation on Hover */
 .episode-card:hover {
     background-color: #212d40; 
-    transform: scale(1.005); /* Slight scale to indicate focus */
+    transform: scale(1.005); 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     z-index: 5;
 }
@@ -118,7 +116,7 @@
 
 /* ================= TEXT STYLING ================= */
 .episode-info {
-    flex-grow: 1; /* Key: This pushes the content to fill the width */
+    flex-grow: 1; 
 }
 
 .episode-info b {
@@ -150,13 +148,54 @@
     background-color: #a855f7;
 }
 
-/* Correct Main spacing */
+/* Correct Main spacing and fill width */
 .main {
     padding-bottom: 120px !important;
-    width: 100%; /* Ensure main area doesn't have a max-width limit */
+    width: 100%; 
 }
 
 /* Hide Radio Logic */
 .pod-selector-logic {
     display: none;
+}
+
+/* ================= MOBILE VIEW SYNC (Matches Home Page) ================= */
+@media (max-width: 991.98px) {
+    .sidebar {
+        display: none !important;
+    }
+
+    .main {
+        margin-left: 0 !important;
+        padding: 25px 20px !important;
+        padding-bottom: 180px !important; /* Spacing for stacked bars */
+    }
+
+    /* THE PLAYER BAR (Shifted up 70px) */
+    .player-bar-fake {
+        position: fixed;
+        bottom: 70px;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #1c2738;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 999;
+    }
+
+    /* BOTTOM NAV APPEARANCE */
+    .bottom-nav {
+        display: flex !important;
+    }
+
+    .bottom-link span {
+        display: none; /* Matches home page style */
+    }
+
+    .bottom-link i {
+        font-size: 22px;
+    }
 }

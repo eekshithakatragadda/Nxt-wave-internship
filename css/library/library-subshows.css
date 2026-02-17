@@ -29,30 +29,32 @@
     color: white;
 }
 
-/* ================= FIXED OVERLAPPING CARD LAYOUT ================= */
+/* ================= OVERLAPPING CARD LAYOUT (DESKTOP) ================= */
 .overlap-container {
     display: flex;
     flex-wrap: wrap;
     padding-left: 10px;
     margin-top: 20px;
+    width: 100%;
 }
 
 .overlap-card {
     width: 200px; 
-    margin-right: -6px; /* Strong fixed overlap */
+    margin-right: -10px; /* Desktop overlap spacing */
     position: relative;
-    transition: z-index 0.2s ease; /* Transitions the stacking order only */
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
 }
 
-/* Hover Logic: No scaling or movement. Card remains fixed in position. */
-
-
-/* Stacking Order: Ensures cards overlap correctly from left to right initially */
+/* Stacking Order */
 .overlap-card:nth-child(1) { z-index: 1; }
 .overlap-card:nth-child(2) { z-index: 2; }
 .overlap-card:nth-child(3) { z-index: 3; }
 .overlap-card:nth-child(4) { z-index: 4; }
 .overlap-card:nth-child(5) { z-index: 5; }
+
+/* Desktop Hover */
+
 
 /* ================= CARD STYLING ================= */
 .img-container {
@@ -60,33 +62,13 @@
     border-radius: 12px;
     overflow: hidden;
     background-color: #000;
-    box-shadow: -10px 0 20px rgba(0,0,0,0.4); /* Shadow to define overlapping edges */
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
 }
 
 .img-container img {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
-}
-
-/* Gradient overlay for the bottom half of the image */
-.img-container::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* Appear on hover */
-.overlap-card:hover .img-container::after {
-    opacity: 1;
 }
 
 .play-circle {
@@ -113,7 +95,8 @@
 .card-info b {
     display: block;
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 15px;
+    color: white;
     transition: color 0.3s ease;
 }
 
@@ -126,13 +109,79 @@
     font-size: 12px;
 }
 
-/* ================= MOBILE RESPONSIVENESS ================= */
-@media (max-width: 991px) {
+/* ================= MOBILE VIEW (OVERLAPPED BUT SPACED) ================= */
+@media (max-width: 991.98px) {
+    .sidebar {
+        display: none !important;
+    }
+
     .main {
+        margin-left: 0 !important;
+        padding: 25px 20px !important;
         padding-bottom: 200px !important;
     }
+
+    /* Fixed Congestion: Reduce width and margin to fit nicely on small screens */
+    .overlap-container {
+        display: flex;
+        flex-wrap: nowrap; /* Keep them in one line for the 'deck' look */
+        overflow-x: auto; /* Allow horizontal scroll if they overflow */
+        padding-bottom: 20px;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .overlap-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome/Safari */
+    }
+
     .overlap-card {
-        width: 160px;
-        margin-right: -100px;
+        flex: 0 0 140px; /* Smaller fixed width for mobile */
+        margin-right: -40px; /* Increased negative margin to maintain overlap on small width */
+        margin-bottom: 0;
+    }
+
+    /* Ensure text labels don't get squashed */
+    .card-info b {
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 45px; /* Prevent text hitting the play button area */
+    }
+
+    /* MOBILE NAVIGATION BARS SYNC (From Home Page) */
+    .player-bar-fake {
+        position: fixed !important;
+        bottom: 70px !important;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #1c2738;
+        display: flex !important;
+        z-index: 1000;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .bottom-nav {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #1c2738;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1001;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .bottom-link span {
+        display: none; 
+    }
+
+    .bottom-link i {
+        font-size: 22px;
     }
 }

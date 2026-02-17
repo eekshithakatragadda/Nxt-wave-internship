@@ -127,7 +127,7 @@
                         <div class="episode-card">
                             <div class="episode-body">
                                 <div class="thumb">
-                                    <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=100" alt="">
+                                    <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400&h=400&fit=crop" alt="">
                                     <div class="play-overlay"><div class="play-btn-circle"><i class="fa-solid fa-play"></i></div></div>
                                 </div>
                                 <div class="episode-info">
@@ -191,6 +191,32 @@
         <div class="default-player-msg" style="color:#94A3B8; font-size:18px;">Select an episode to start listening</div>
     </div>
 </div>
+
+<nav class="bottom-nav">
+    <input type="radio" name="mobile-nav" id="mob-home" class="nav-logic">
+    <label for="mob-home" class="bottom-link" onclick="location.href='../home.html'">
+        <i class="fa-regular fa-house"></i>
+        <span>Home</span>
+    </label>
+
+    <input type="radio" name="mobile-nav" id="mob-explore" class="nav-logic">
+    <label for="mob-explore" class="bottom-link" onclick="location.href='../explore.html'">
+        <i class="fa-regular fa-compass"></i>
+        <span>Explore</span>
+    </label>
+
+    <input type="radio" name="mobile-nav" id="mob-library" class="nav-logic" checked>
+    <label for="mob-library" class="bottom-link" onclick="location.href='../library/library-subshows.html'">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Library</span>
+    </label>
+
+    <input type="radio" name="mobile-nav" id="mob-settings" class="nav-logic">
+    <label for="mob-settings" class="bottom-link" onclick="location.href='../settings.html'">
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+    </label>
+</nav>
 
 <script src="../../js/player.js"></script>
 </body>
