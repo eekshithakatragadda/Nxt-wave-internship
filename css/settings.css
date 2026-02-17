@@ -1,22 +1,23 @@
 /* ================= MAIN SETTINGS LAYOUT ================= */
 .settings-header h1 {
-    font-size: 42px;
+    font-size: 45px;
     font-weight: 700;
     color: white;
-    margin-bottom: 5px; /* Pulls subtitle closer */
+    margin-bottom: 15px; /* Pulls subtitle closer */
 }
 
 /* FIX: Smaller, muted subtitle to match image */
 .minhead {
-    color: #64748b !important;
-    font-size: 14px !important;
-    margin-bottom: 40px !important;
+    color: #94a3b8 !important;
+    font-size: 18px !important;
+    margin-bottom: 20px !important;
+    font-weight:400;
     display: block;
 }
 
 .section-label {
     color: #94a3b8;
-    font-size: 14px;
+    font-size: 22px;
     font-weight: 600;
     text-transform: capitalize;
     margin-bottom: 20px;
@@ -25,7 +26,7 @@
 .settings-list {
     display: flex;
     flex-direction: column; gap: 12px;
-    max-width: 650px;
+    max-width: 100%;
 }
 
 .settings-item {
@@ -35,7 +36,7 @@
     display: flex; align-items: center; gap: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 100%;
+    width: 600px;
 }
 
 .bulge-card:hover {
@@ -51,8 +52,8 @@
     color: #94a3b8; font-size: 18px;
 }
 
-.item-text b { display: block; color: white; font-size: 16px; margin-bottom: 2px; }
-.item-text small { color: #64748b; font-size: 13px; }
+.item-text b { display: block; color: white; font-size: 20px; margin-bottom: 0px; font-weight:500;}
+.item-text small { color: #64748b; font-size: 18px; }
 
 /* ================= TOGGLE SWITCH ================= */
 .custom-switch {
@@ -83,7 +84,7 @@
 
 .settings-footer {
     opacity: 0.6;
-    font-size: 11px;
+    font-size: 16px;
     color: #94a3b8;
     margin-top: 30px;
     padding-bottom: 120px; 

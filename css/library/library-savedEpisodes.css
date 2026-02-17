@@ -28,13 +28,26 @@
     color: white;
 }
 
+/* ================= EPISODE LIST CONTAINER ================= */
+/* This ensures the list takes up 100% of the main content area */
+.episode-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* This ensures each container expands to fill the width */
+.episode-container {
+    width: 100%;
+}
+
 /* ================= EPISODE CARD & HOVER ANIMATION ================= */
 .episode-card {
     background-color: #1c2738;
     border-radius: 12px;
     overflow: hidden;
-    transition: background 0.3s ease;
     cursor: pointer;
+    width: 100%; /* Occupation of the entire width */
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -45,7 +58,7 @@
     gap: 20px;
 }
 
-/* Thumbnail Logic (Matches Home Page Continue Listening Section) */
+/* Thumbnail Logic */
 .thumb {
     position: relative;
     width: 70px;
@@ -90,20 +103,24 @@
 /* Animation on Hover */
 .episode-card:hover {
     background-color: #212d40; 
-    transform: scale(1.008); 
+    transform: scale(1.005); /* Slight scale to indicate focus */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     z-index: 5;
 }
 
 .episode-card:hover .thumb img {
-    filter: brightness(0.5); /* Darkens the image */
+    filter: brightness(0.5);
 }
 
 .episode-card:hover .play-overlay {
-    opacity: 1; /* Shows the play button */
+    opacity: 1;
 }
 
 /* ================= TEXT STYLING ================= */
+.episode-info {
+    flex-grow: 1; /* Key: This pushes the content to fill the width */
+}
+
 .episode-info b {
     display: block;
     font-size: 16px;
@@ -111,7 +128,7 @@
 }
 
 .show-title {
-    color: #94a3b8; /* Changed from violet to standard muted gray */
+    color: #94a3b8;
     font-size: 13px;
     margin-top: 2px;
 }
@@ -136,4 +153,10 @@
 /* Correct Main spacing */
 .main {
     padding-bottom: 120px !important;
+    width: 100%; /* Ensure main area doesn't have a max-width limit */
+}
+
+/* Hide Radio Logic */
+.pod-selector-logic {
+    display: none;
 }

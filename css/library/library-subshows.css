@@ -29,44 +29,64 @@
     color: white;
 }
 
-/* ================= UPDATED CARD HOVER (BOTTOM ONLY DARKEN) ================= */
+/* ================= FIXED OVERLAPPING CARD LAYOUT ================= */
+.overlap-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    margin-top: 20px;
+}
 
+.overlap-card {
+    width: 200px; 
+    margin-right: -6px; /* Strong fixed overlap */
+    position: relative;
+    transition: z-index 0.2s ease; /* Transitions the stacking order only */
+}
+
+/* Hover Logic: No scaling or movement. Card remains fixed in position. */
+
+
+/* Stacking Order: Ensures cards overlap correctly from left to right initially */
+.overlap-card:nth-child(1) { z-index: 1; }
+.overlap-card:nth-child(2) { z-index: 2; }
+.overlap-card:nth-child(3) { z-index: 3; }
+.overlap-card:nth-child(4) { z-index: 4; }
+.overlap-card:nth-child(5) { z-index: 5; }
+
+/* ================= CARD STYLING ================= */
 .img-container {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
     background-color: #000;
+    box-shadow: -10px 0 20px rgba(0,0,0,0.4); /* Shadow to define overlapping edges */
 }
 
 .img-container img {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
-    transition: transform 0.4s ease;
 }
 
-/* Create the Bottom Gradient Overlay - only darkens bottom portion */
+/* Gradient overlay for the bottom half of the image */
 .img-container::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50%; /* Covers the bottom half */
+    height: 50%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
-    opacity: 0; /* Hidden initially */
-    transition: opacity 0.4s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease;
     z-index: 1;
     pointer-events: none;
 }
 
-/* Hover Logic */
-.image-card:hover .img-container img {
-    transform: scale(1.08);
-}
-
-.image-card:hover .img-container::after {
-    opacity: 1; /* Shows only the bottom shadow on hover */
+/* Appear on hover */
+.overlap-card:hover .img-container::after {
+    opacity: 1;
 }
 
 .play-circle {
@@ -82,34 +102,37 @@
     justify-content: center;
     color: white;
     opacity: 0;
-    transition: 0.3s ease;
-    z-index: 2; /* Sits above the shadow */
+    transition: opacity 0.3s ease;
+    z-index: 2;
 }
 
-.image-card:hover .play-circle {
+.overlap-card:hover .play-circle {
     opacity: 1;
-    transform: translateY(-5px);
 }
 
 .card-info b {
     display: block;
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 14px;
     transition: color 0.3s ease;
 }
 
-.image-card:hover .card-info b {
+.overlap-card:hover .card-info b {
     color: #a855f7;
 }
 
 .card-info small {
     color: #94a3b8;
-    font-size: 13px;
+    font-size: 12px;
 }
 
-/* ================= MOBILE SPACING FIXES ================= */
+/* ================= MOBILE RESPONSIVENESS ================= */
 @media (max-width: 991px) {
     .main {
         padding-bottom: 200px !important;
+    }
+    .overlap-card {
+        width: 160px;
+        margin-right: -100px;
     }
 }

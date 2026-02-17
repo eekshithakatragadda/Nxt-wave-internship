@@ -16,6 +16,8 @@ body {
     min-height: 100vh;
     padding: 0;
     border-right: 1px solid rgba(255, 255, 255, 0.05);
+    position: fixed;
+    z-index: 1000;
 }
 
 .logo-section {
@@ -106,8 +108,9 @@ body {
 
 /* ================= MAIN CONTENT ================= */
 .main {
+    margin-left: 260px;
     padding: 40px 60px;
-    width: 100%;
+    width: auto;
     padding-bottom: 120px;
 }
 
@@ -115,13 +118,18 @@ body {
     margin-bottom: 60px;
 }
 
-.section-header {
-    margin-bottom: 25px;
+
+    .section-header h4 {
+    font-size: 28px; /* Adjust as needed */
+    font-weight: 600;
+    margin-bottom: 20px;
 }
+    
+
 
 .see-all {
     color: #94a3b8;
-    font-size: 13px;
+    font-size: 18px;
     cursor: pointer;
 }
 
@@ -224,9 +232,10 @@ body {
 
 .card-info b {
     display: block;
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 8px;
     transition: color 0.3s ease; 
+    font-weight:600;
 }
 
 .image-card:hover .card-info b {
@@ -235,9 +244,12 @@ body {
 
 .card-info small {
     color: #94a3b8;
+    font-size: 14px; /* Increased size */
+    display: block;  /* Ensures it stays on its own line */
+    margin-top: 0px;
 }
 
-/* ================= CONTINUE LISTENING ================= */
+/* ================= CONTINUE LISTENING / EPISODES ================= */
 .pod-selector-logic {
     display: none;
 }
@@ -247,7 +259,7 @@ body {
     cursor: pointer;
 }
 
-.continue-card {
+.continue-card, .episode-item {
     background-color: #1c2738;
     padding: 15px;
     border-radius: 16px;
@@ -259,7 +271,7 @@ body {
     border: 1.5px solid transparent; 
 }
 
-.continue-card:hover {
+.continue-card:hover, .episode-item:hover {
     background-color: #161f2d;
     transform: translateY(-6px);
 }
@@ -305,26 +317,28 @@ body {
     font-size: 12px;
 }
 
-.continue-card:hover .thumb img {
+.continue-card:hover .thumb img, .episode-item:hover .thumb img {
     filter: brightness(0.5);
 }
 
-.continue-card:hover .play-overlay {
+.continue-card:hover .play-overlay, .episode-item:hover .play-overlay {
     opacity: 1;
 }
 
 .info-text b {
-    font-size: 0.9rem;
+    font-size: 16px;
     transition: color 0.3s ease;
+    font-weight:600;
 }
 
 .info-text small {
-    font-size: 0.75rem;
+    font-size: 14px;
     color: #94a3b8;
 }
 
 /* Playback State Styling */
-.pod-selector-logic:checked + .continue-card-label .continue-card {
+.pod-selector-logic:checked + .continue-card-label .continue-card,
+.pod-selector-logic:checked + .continue-card-label .episode-item {
     border: 1.5px solid #A855F7;
     background-color: rgba(168, 85, 247, 0.1);
 }
@@ -333,7 +347,7 @@ body {
     color: #A855F7;
 }
 
-/* Playing Animation - Right Center Aligned */
+/* Playing Animation (Bars) */
 .playing-animation {
     display: none;
     gap: 3px;
@@ -412,7 +426,7 @@ body {
     appearance: none;
     width: 100%;
     height: 3px;
-    background: #334155; /* Thin Dark Grey Line */
+    background: #334155; 
     border-radius: 5px;
     outline: none;
 }
@@ -422,7 +436,7 @@ body {
     appearance: none;
     width: 12px;
     height: 12px;
-    background: #a855f7; /* Purple Dot */
+    background: #a855f7; 
     border-radius: 50%;
     cursor: pointer;
 }
@@ -465,13 +479,14 @@ body {
     }
 
     .main {
+        margin-left: 0;
         padding: 25px 20px;
         padding-bottom: 180px;
     }
 
-    .bottom-nav {
+    .player-bar-fake {
         position: fixed;
-        bottom: 73px;
+        bottom: 70px;
         left: 0;
         width: 100%;
         height: 70px;
@@ -481,6 +496,20 @@ body {
         align-items: center;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         z-index: 999;
+    }
+
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #1c2738;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1000;
     }
 
     .bottom-link {
@@ -526,5 +555,59 @@ body {
 @media (min-width: 992px) {
     .bottom-nav {
         display: none;
+    }
+}
+/* ================= HERO DAILY MIX PILL ================= */
+.daily-mix {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Space between dot and text */
+    background-color: rgba(168, 85, 247, 0.15); /* Muted purple background from image */
+    padding: 6px 14px;
+    border-radius: 50px; /* Clean pill shape */
+    margin-bottom: 25px;
+}
+
+.daily-mix .dot {
+    width: 10px;
+    height: 6px;
+    background-color: #a855f7; 
+    border-radius: 50%;
+    display: inline-block;
+    /* Updated animation name */
+    animation: pulse-height 1.5s infinite ease-in-out;
+}
+
+.daily-mix .text {
+    color: #a855f7; /* Text color matches the purple dot */
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+@keyframes pulse-oval {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        border-radius: 50%;
+    }
+    50% {
+        transform: scale(1.3); /* Makes it larger */
+        opacity: 0.7;         /* Makes it slightly transparent */
+        border-radius: 40%;    /* Slightly squarer oval for fluid effect */
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        border-radius: 50%;
+    }
+}
+@keyframes pulse-height {
+    0%, 100% {
+        transform: scaleY(1); /* Original height (6px) */
+        opacity: 1;
+    }
+    50% {
+        transform: scaleY(1.8); /* Increases height by 80% while width stays 10px */
+        opacity: 0.8;
     }
 }

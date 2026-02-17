@@ -28,19 +28,31 @@
     color: white;
 }
 
+/* ================= EPISODE LIST CONTAINER ================= */
+.episode-list {
+    width: 100%; /* Force list to occupy full width of main container */
+    display: flex;
+    flex-direction: column;
+}
+
+.episode-container {
+    width: 100%; /* Ensure container occupies full width */
+}
+
 /* ================= EPISODE CARD & BULGE ANIMATION ================= */
 .episode-card {
     background-color: #1c2738;
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
+    width: 100%; /* Cards stretch to the end of the content area */
     /* Smooth transition for the 'bulge' effect */
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .episode-card:hover {
     background-color: #212d40; /* Subtle fade background */
-    transform: scale(1.02); /* Bulge effect popping out */
+    transform: scale(1.005); /* Slight bulge for feedback without over-stretching */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Lifted shadow */
     z-index: 5;
 }
@@ -55,7 +67,7 @@
 /* Thumbnail Darkening (Matches Saved Episodes & Home) */
 .thumb {
     position: relative;
-    width: 70px; /* Increased image size */
+    width: 70px; /* Standardized size */
     height: 70px;
     flex-shrink: 0;
     border-radius: 8px;
@@ -84,7 +96,7 @@
 
 .play-btn-circle {
     background-color: #a855f7;
-    width: 40px; /* Increased play button size */
+    width: 40px; 
     height: 40px;
     border-radius: 50%;
     display: flex;
@@ -103,6 +115,10 @@
 }
 
 /* ================= TEXT STYLING ================= */
+.episode-info {
+    flex-grow: 1; /* This ensures the text area expands to fill the full card width */
+}
+
 .episode-info b {
     display: block;
     font-size: 16px;
@@ -120,6 +136,12 @@
     color: #64748b !important;
 }
 
+/* Ensure no radio buttons show */
+.pod-selector-logic {
+    display: none;
+}
+
 .main {
     padding-bottom: 120px !important;
+    width: 100%; /* Pushes content to edges */
 }
