@@ -120,7 +120,7 @@ body {
 
 
     .section-header h4 {
-    font-size: 28px; /* Adjust as needed */
+    font-size: 28px; 
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -244,8 +244,8 @@ body {
 
 .card-info small {
     color: #94a3b8;
-    font-size: 14px; /* Increased size */
-    display: block;  /* Ensures it stays on its own line */
+    font-size: 14px; 
+    display: block; 
     margin-top: 0px;
 }
 
@@ -413,7 +413,7 @@ body {
     box-shadow: 0 0 15px rgba(168, 85, 247, 0.1);
 }
 
-/* Custom Thin Volume Bar with Purple Dot */
+
 .volume-container {
     display: flex;
     align-items: center;
@@ -562,9 +562,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px; /* Space between dot and text */
-    background-color: rgba(168, 85, 247, 0.15); /* Muted purple background from image */
+    background-color: rgba(168, 85, 247, 0.15); 
     padding: 6px 14px;
-    border-radius: 50px; /* Clean pill shape */
+    border-radius: 50px; 
     margin-bottom: 25px;
 }
 
@@ -574,12 +574,12 @@ body {
     background-color: #a855f7; 
     border-radius: 50%;
     display: inline-block;
-    /* Updated animation name */
+   
     animation: pulse-height 1.5s infinite ease-in-out;
 }
 
 .daily-mix .text {
-    color: #a855f7; /* Text color matches the purple dot */
+    color: #a855f7; 
     font-size: 13px;
     font-weight: 600;
     text-transform: capitalize;
@@ -591,9 +591,9 @@ body {
         border-radius: 50%;
     }
     50% {
-        transform: scale(1.3); /* Makes it larger */
-        opacity: 0.7;         /* Makes it slightly transparent */
-        border-radius: 40%;    /* Slightly squarer oval for fluid effect */
+        transform: scale(1.3); 
+        opacity: 0.7;         
+        border-radius: 40%;    
     }
     100% {
         transform: scale(1);
@@ -603,11 +603,24 @@ body {
 }
 @keyframes pulse-height {
     0%, 100% {
-        transform: scaleY(1); /* Original height (6px) */
+        transform: scaleY(1); 
         opacity: 1;
     }
     50% {
-        transform: scaleY(1.8); /* Increases height by 80% while width stays 10px */
+        transform: scaleY(1.8); 
         opacity: 0.8;
     }
+}
+
+.section h4 + .row .continue-card .info-text > div:first-child {
+    min-width: 0;
+}
+
+.section h4 + .row .continue-card b,
+.section h4 + .row .continue-card small {
+    white-space: nowrap;
+}
+
+.section h4 + .row .continue-card .info-text {
+    overflow: hidden;
 }
