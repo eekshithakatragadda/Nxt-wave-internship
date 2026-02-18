@@ -23,8 +23,8 @@ body {
 }
 
 .main-cover {
-    width: 350px;
-    height: 350px;
+    width: 200px;
+    height: 200px;
     border-radius: 28px;
     object-fit: cover;
     box-shadow: 0 30px 60px rgba(0,0,0,0.6);
@@ -40,7 +40,7 @@ body {
     height: 3px;
     border-radius: 5px;
     outline: none;
-    width: 100%;
+    width: 90%;
 }
 
 .custom-slider::-webkit-slider-thumb {
@@ -52,18 +52,18 @@ body {
     cursor: pointer;
 }
 
-.vol-slider { width: 120px; }
+.vol-slider { width: 100x; }
 .time-info { color: #94A3B8; font-size: 14px; font-weight: 500; }
 
 .play-btn-large {
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
     background: #A855F7;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
 }
 
@@ -73,7 +73,7 @@ body {
     background: rgba(255,255,255,0.1);
     padding: 6px 16px;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     cursor: pointer;
     min-width: 60px;
