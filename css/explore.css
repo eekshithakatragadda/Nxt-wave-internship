@@ -149,7 +149,7 @@
     border-radius: 50%;
 }
 
-/* Category Colors */
+
 .cat-red { background: #ff4d6d; }
 .cat-orange { background: #fb8500; }
 .cat-blue { background: #219ebc; }
@@ -224,10 +224,10 @@
     .main {
         margin-left: 0 !important;
         padding: 25px 20px !important;
-        padding-bottom: 180px !important; /* Spacing for stacked bars */
+        padding-bottom: 180px !important; 
     }
 
-    /* THE PLAYER BAR (Shifted up 70px) */
+   
     .player-bar-fake {
         position: fixed !important;
         bottom: 70px !important;
@@ -272,7 +272,7 @@
         color: var(--accent-purple) !important; 
     }
 
-    /* Adjust Category Cards for Mobile */
+   
     .category-card {
         height: 140px; 
         padding: 15px;

@@ -148,18 +148,17 @@
     background-color: #a855f7;
 }
 
-/* Correct Main spacing and fill width */
+
 .main {
     padding-bottom: 120px !important;
     width: 100%; 
 }
 
-/* Hide Radio Logic */
 .pod-selector-logic {
     display: none;
 }
 
-/* ================= MOBILE VIEW SYNC (Matches Home Page) ================= */
+
 @media (max-width: 991.98px) {
     .sidebar {
         display: none !important;
@@ -168,10 +167,10 @@
     .main {
         margin-left: 0 !important;
         padding: 25px 20px !important;
-        padding-bottom: 180px !important; /* Spacing for stacked bars */
+        padding-bottom: 180px !important; 
     }
 
-    /* THE PLAYER BAR (Shifted up 70px) */
+   
     .player-bar-fake {
         position: fixed;
         bottom: 70px;
@@ -192,7 +191,7 @@
     }
 
     .bottom-link span {
-        display: none; /* Matches home page style */
+        display: none; 
     }
 
     .bottom-link i {

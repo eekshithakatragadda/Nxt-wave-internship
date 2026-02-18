@@ -154,10 +154,10 @@
     .main {
         margin-left: 0 !important;
         padding: 25px 20px !important;
-        padding-bottom: 180px !important; /* Spacing for stacked bars */
+        padding-bottom: 180px !important; 
     }
 
-    /* THE PLAYER BAR (Shifted up 70px) */
+    
     .player-bar-fake {
         position: fixed;
         bottom: 70px;
